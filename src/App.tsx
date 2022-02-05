@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ApolloProvider } from '@apollo/client';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BaseStyles, ThemeProvider } from '@primer/react';
+import apolloClient from './core/ApolloClient';
+import MainPage from './pages';
+import UserPage from './pages/UserPage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <Router>
+    <ThemeProvider>
+      <BaseStyles>
+        <ApolloProvider client={apolloClient}>
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/user/:id" element={<UserPage />} />
+          </Routes>
+        </ApolloProvider>
+      </BaseStyles>
+    </ThemeProvider>
+  </Router>
+);
 
 export default App;
