@@ -1,6 +1,6 @@
 import React from 'react';
 import { ApolloProvider } from '@apollo/client';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { BaseStyles, ThemeProvider } from '@primer/react';
 import apolloClient from './core/ApolloClient';
 import MainPage from './pages';
