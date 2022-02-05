@@ -8,7 +8,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prepare": "husky install",
-    "gen": "graphql-codegen --config codegen.yml -r dotenv/config"
+    "gen": "graphql-codegen --config codegen.yml -r dotenv/config",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@apollo/client": "^3.5.8",
@@ -62,10 +64,6 @@
   },
   "devDependencies": {
     "@graphql-codegen/cli": "2.5.0",
-    "@graphql-codegen/introspection": "2.1.1",
-    "@graphql-codegen/typescript": "2.4.3",
-    "@graphql-codegen/typescript-operations": "2.2.4",
-    "@graphql-codegen/typescript-react-apollo": "3.2.5",
     "@types/classnames": "^2.3.1",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "@typescript-eslint/parser": "^5.10.2",
@@ -81,10 +79,12 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-testing-library": "^5.0.5",
+    "gh-pages": "^3.2.3",
     "husky": ">=6",
     "lint-staged": ">=10",
     "prettier": "^2.5.1"
   },
+  "homepage": "https://AlbertGabdullin.github.io/test-gql",
   "lint-staged": {
     "*.{ts,tsx}": "eslint --cache --fix"
   }
