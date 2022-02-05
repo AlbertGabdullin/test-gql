@@ -1,0 +1,22 @@
+query User($login: String!, $repoCount: Int!) {
+  user(login: $login) {
+    avatarUrl
+    login
+    name
+    company
+    email
+    twitterUsername
+    followers {
+      totalCount
+    }
+    following {
+      totalCount
+    }
+    repositories(first: $repoCount) {
+      nodes {
+        name
+        description
+      }
+    }
+  }
+}
