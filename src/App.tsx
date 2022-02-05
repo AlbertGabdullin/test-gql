@@ -12,8 +12,14 @@ const App = () => (
       <BaseStyles>
         <ApolloProvider client={apolloClient}>
           <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/user/:id" element={<UserPage />} />
+            <Route
+              path={process.env.PUBLIC_URL || '' + '/'}
+              element={<MainPage />}
+            />
+            <Route
+              path={process.env.PUBLIC_URL || '' + '/user/:id'}
+              element={<UserPage />}
+            />
           </Routes>
         </ApolloProvider>
       </BaseStyles>
