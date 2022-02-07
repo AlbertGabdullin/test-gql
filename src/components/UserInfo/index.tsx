@@ -142,14 +142,25 @@ const UserInfo = ({
         </FollowersLink>
       </Followers>
       <Details>
-        <DetailItem className="bold">
-          <OrganizationIcon className="detail-icon color-fg-muted" />
-          <Link className="Link--primary" href={`${GITHUB_URL}/${company?.slice(1)}`}>{company}</Link>
-        </DetailItem>
-        <DetailItem>
-          <MailIcon className="detail-icon color-fg-muted" />
-          <Link className="Link--primary" href={`mailto:${email}`}>{email}</Link>
-        </DetailItem>
+        {company && (
+          <DetailItem className="bold">
+            <OrganizationIcon className="detail-icon color-fg-muted" />
+            <Link
+              className="Link--primary"
+              href={`${GITHUB_URL}/${company?.slice(1)}`}
+            >
+              {company}
+            </Link>
+          </DetailItem>
+        )}
+        {email && (
+          <DetailItem>
+            <MailIcon className="detail-icon color-fg-muted" />
+            <Link className="Link--primary" href={`mailto:${email}`}>
+              {email}
+            </Link>
+          </DetailItem>
+        )}
       </Details>
     </Wrapper>
   );
