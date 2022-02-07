@@ -84,7 +84,6 @@
     "lint-staged": ">=10",
     "prettier": "^2.5.1"
   },
-  "homepage": "https://AlbertGabdullin.github.io/test-gql",
   "lint-staged": {
     "*.{ts,tsx}": "eslint --cache --fix"
   }
