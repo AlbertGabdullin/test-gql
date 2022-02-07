@@ -9,8 +9,7 @@
     "eject": "react-scripts eject",
     "prepare": "husky install",
     "gen": "graphql-codegen --config codegen.yml -r dotenv/config",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "@apollo/client": "^3.5.8",
