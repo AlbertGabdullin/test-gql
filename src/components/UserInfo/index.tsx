@@ -5,7 +5,7 @@ import { MailIcon, OrganizationIcon, PeopleIcon } from '@primer/octicons-react';
 import { GITHUB_URL } from '../../consts';
 
 const Wrapper = styled.div`
-  width: 296px;
+  max-width: 296px;
   flex-grow: 100;
 `;
 
